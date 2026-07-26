@@ -30,7 +30,7 @@ export default function CTABanner() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-brand-700 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-brand-50 hover:shadow-white/30"
+                className="inline-flex items-center gap-2 rounded-md bg-white px-7 py-3.5 text-sm font-bold text-brand-700 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-brand-50 hover:shadow-white/30"
               >
                 <svg
                   width="16"

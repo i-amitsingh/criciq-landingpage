@@ -5,9 +5,10 @@ import type { Theme } from '../utils/types';
 
 interface Props {
   theme: Theme;
+  onNavigate: (page: string) => void;
 }
 
-export default function Footer({ theme }: Props) {
+export default function Footer({ theme, onNavigate }: Props) {
   const year = new Date().getFullYear();
 
   return (
@@ -20,7 +21,7 @@ export default function Footer({ theme }: Props) {
               <img
                 src={theme === 'dark' ? logoDark : logoLight}
                 alt="CricIQ"
-                className="h-9 w-auto object-contain bg-blend-multiply"
+                className={`h-9 w-auto object-contain ${theme === 'light' ? 'mix-blend-multiply' : ''}`}
               />
             </a>
             <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
@@ -81,10 +82,24 @@ export default function Footer({ theme }: Props) {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-200 pt-8 text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400 sm:flex-row">
-          <span>© {year} CricIQ by SportZengage. All rights reserved.</span>
+          <div className="flex flex-wrap items-center gap-4">
+            <span>© {year} CricIQ by SportZengage. All rights reserved.</span>
+            <button
+              onClick={() => onNavigate('privacy')}
+              className="hover:text-brand-500 dark:hover:text-brand-400"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => onNavigate('about')}
+              className="hover:text-brand-500 dark:hover:text-brand-400"
+            >
+              About
+            </button>
+          </div>
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
+            className="inline-flex items-center gap-2 rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
           >
             Download Beta
           </a>

@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-600 hover:-translate-y-0.5 hover:shadow-brand-500/40"
+            className="inline-flex items-center gap-2 rounded-md bg-brand-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-600 hover:-translate-y-0.5 hover:shadow-brand-500/40"
           >
             <svg
               width="18"

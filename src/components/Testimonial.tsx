@@ -19,9 +19,12 @@ export default function Testimonial() {
         </blockquote>
 
         <div className="flex flex-col items-center gap-1">
-          {/* Parthiv Patel avatar placeholder */}
-          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-brand-500/20 ring-2 ring-brand-500/40">
-            <span className="text-2xl">🏏</span>
+          <div className="mb-3 h-16 w-16 overflow-hidden rounded-full ring-2 ring-brand-500/50">
+            <img
+              src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=200&h=200&fit=crop&crop=face"
+              alt="Parthiv Patel"
+              className="h-full w-full object-cover"
+            />
           </div>
           <p className="font-bold text-white">{TESTIMONIAL.name}</p>
           <p className="text-sm text-neutral-400">{TESTIMONIAL.role}</p>
