@@ -2,7 +2,7 @@ import { TESTIMONIAL } from '../constants/content'
 
 export default function Testimonial() {
   return (
-    <section className="relative overflow-hidden bg-neutral-950 px-4 py-20 dark:bg-black">
+    <section className="relative overflow-hidden bg-neutral-950 px-4 py-12 dark:bg-black sm:py-20">
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />

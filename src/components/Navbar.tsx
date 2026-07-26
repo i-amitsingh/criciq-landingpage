@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import type { Theme } from '../utils/types';
+import { NAV_ITEMS, HERO } from '../constants/content';
 import logoLight from '../assets/CriciqLogo.png';
 import logoDark from '../assets/CriciqLogoDark.png';
 
@@ -11,16 +12,10 @@ interface Props {
   onNavigate: (page: string) => void;
 }
 
-const NAV_ITEMS = [
-  { label: 'About', href: null, page: 'about' },
-  { label: 'Features', href: '#features', page: null },
-  { label: 'For Who', href: '#for-who', page: null },
-];
-
 export default function Navbar({ theme, onToggle, currentPage, onNavigate }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleNav = (item: (typeof NAV_ITEMS)[0]) => {
+  const handleNav = (item: (typeof NAV_ITEMS)[number]) => {
     setMenuOpen(false);
     if (item.page) {
       onNavigate(item.page);
@@ -30,7 +25,6 @@ export default function Navbar({ theme, onToggle, currentPage, onNavigate }: Pro
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200/60 bg-white/90 backdrop-blur-md dark:border-white/10 dark:bg-neutral-950/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo */}
         <button onClick={() => onNavigate('home')} className="flex items-center">
           <img
             src={theme === 'dark' ? logoDark : logoLight}
@@ -39,7 +33,6 @@ export default function Navbar({ theme, onToggle, currentPage, onNavigate }: Pro
           />
         </button>
 
-        {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) =>
             item.page ? (
@@ -63,45 +56,29 @@ export default function Navbar({ theme, onToggle, currentPage, onNavigate }: Pro
               >
                 {item.label}
               </a>
-            )
+            ),
           )}
         </nav>
 
-        {/* Right side */}
         <div className="flex items-center gap-3">
           <ThemeToggle theme={theme} onToggle={onToggle} />
           <a
             href="#"
             className="hidden rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-600 md:inline-flex"
           >
-            Download Beta
+            {HERO.ctaPrimary}
           </a>
-          {/* Hamburger */}
           <button
             onClick={() => setMenuOpen((o) => !o)}
             className="rounded-md p-2 text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800 md:hidden"
             aria-label="Toggle menu"
           >
             {menuOpen ? (
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             ) : (
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 12h18M3 6h18M3 18h18" />
               </svg>
             )}
@@ -109,7 +86,6 @@ export default function Navbar({ theme, onToggle, currentPage, onNavigate }: Pro
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="border-t border-neutral-200 bg-white px-4 pb-4 dark:border-white/10 dark:bg-neutral-950 md:hidden">
           <nav className="flex flex-col gap-1 pt-2">
@@ -131,13 +107,13 @@ export default function Navbar({ theme, onToggle, currentPage, onNavigate }: Pro
                 >
                   {item.label}
                 </a>
-              )
+              ),
             )}
             <a
               href="#"
               className="mt-2 rounded-md bg-brand-500 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-brand-600"
             >
-              Download Beta
+              {HERO.ctaPrimary}
             </a>
           </nav>
         </div>

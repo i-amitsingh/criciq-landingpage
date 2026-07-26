@@ -1,53 +1,47 @@
 import { HERO } from '../constants/content';
+import stadiumLight from '../assets/StadiumLight.png';
+import stadiumDark from '../assets/StadiumDark.png';
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-20">
-      {/* Stadium background — swap src with your own image */}
+    <section className="relative min-h-[80vh] overflow-hidden sm:min-h-[90vh]">
       <img
-        src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1600&q=80"
+        src={stadiumLight}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-center dark:hidden"
+      />
+      <img
+        src={stadiumDark}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover object-center dark:block"
       />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/52 to-white/68 dark:from-neutral-950/55 dark:via-neutral-950/68 dark:to-neutral-950/82" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 dark:from-black/75 dark:via-black/45 dark:to-black/85" />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
-        {/* Headline */}
-        <h1 className="mb-6 whitespace-pre-line text-5xl font-extrabold leading-tight tracking-tight text-neutral-900 dark:text-white sm:text-6xl lg:text-7xl">
-          {HERO.headline}
+      <div className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center px-4 pt-20 pb-20 text-center sm:min-h-[90vh] sm:pt-24 sm:pb-32">
+        <h1 className="max-w-4xl text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
+          {HERO.headlineParts.line1prefix}
+          <br />
+          <span className="text-brand-400">{HERO.headlineParts.line1highlight}</span>
+          <br />
+          {HERO.headlineParts.line2}
         </h1>
 
-        {/* Sub-headline */}
-        <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-lg">
           {HERO.subheadline}
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 rounded-md bg-brand-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-600 hover:-translate-y-0.5 hover:shadow-brand-500/40"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            {HERO.ctaPrimary}
-          </a>
-        </div>
+        <a
+          href="#"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-xs font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:bg-brand-400 hover:-translate-y-0.5 hover:shadow-brand-500/50 sm:mt-8 sm:px-7 sm:py-3.5 sm:text-sm"
+        >
+          {HERO.ctaPrimary}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </section>
   );

@@ -18,8 +18,8 @@ export default function Home({ theme, onNavigate }: Props) {
     <>
       <main>
         <Hero />
-        <Features />
         <AppVideo />
+        <Features />
         <ForWho />
         <Testimonial />
         <CTABanner />

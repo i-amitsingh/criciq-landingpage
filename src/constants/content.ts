@@ -1,4 +1,4 @@
-import type { Feature, NavLink, FooterLink, AudienceCard } from '../utils/types';
+import type { NavLink, FooterLink } from '../utils/types';
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Features', href: '#features' },
@@ -6,110 +6,147 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'About', href: '#about' },
 ];
 
+export const NAV_ITEMS = [
+  { label: 'About', href: null, page: 'about' },
+  { label: 'Features', href: '#features', page: null },
+  { label: 'For Who', href: '#for-who', page: null },
+] as const;
+
 export const HERO = {
-  headline: `Your Personal AI\nCricket Coach`,
+  headline: "Welcome to India's First AI\nCricket Coaching App.",
+  headlineParts: {
+    line1prefix: "Welcome to India's  ",
+    line1highlight: 'First AI Cricket ',
+    line2: 'Coaching App.',
+  },
   subheadline:
-    'Point your phone at the pitch. CricIQ turns any practice session into professional-grade analytics - ball speed, swing, biomechanics, injury risk and more. No hardware. No wearables. Just AI.',
+    'Record with your phone. Get ball speed, pitch maps, biomechanics, and AI coaching - instantly. No gear needed.',
   ctaPrimary: 'Download Beta',
-  ctaSecondary: 'Watch Demo',
-  stats: [
-    { value: '8+', label: 'Analysis Modules' },
-    { value: '0', label: 'Hardware Needed' },
-    { value: 'AI', label: 'Powered Coaching' },
-  ],
+  badge: 'AI-Powered Cricket Analysis',
 } as const;
 
-export const FEATURES: Feature[] = [
+export const FEATURES_SECTION = {
+  badge: 'Features',
+  title: 'Every tool your game needs',
+  description:
+    'Professional cricket analysis — ball speed, biomechanics, pitch maps, 3D trajectory, swing detection, and AI coaching — all from one smartphone video.',
+  ctaTitle: 'Ready to level up your cricket?',
+  ctaDescription: 'All 8 modules included in every plan. No hardware required.',
+  ctaButton: 'Download Beta',
+} as const;
+
+export const FEATURES = [
   {
-    icon: '🎯',
+    id: 'pitch-map',
     title: 'Pitch Map',
     description:
-      "Visualise every ball's landing zone on an interactive pitch map. Spot patterns, danger areas, and length distribution at a glance across any session.",
-    image: 'https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=600&q=75',
+      'See where every ball lands on an interactive pitch map. Spot patterns and weak zones instantly.',
   },
   {
-    icon: '⚡',
-    title: 'Ball Speed Tracking',
+    id: 'ball-speed',
+    title: 'Ball Speed',
     description:
-      'Measure delivery speed, release-point consistency, and pace variation across your entire session — all from a single smartphone camera.',
-    image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=75',
+      'Measure pace, release point, and speed changes across your session — from your phone camera.',
   },
   {
-    icon: '🦾',
-    title: 'Biomechanics Analysis',
+    id: 'biomechanics',
+    title: 'Biomechanics',
     description:
-      'AI skeleton overlay maps your run-up, bowling action, and batting stance — highlighting inefficiencies before they become habits or injuries.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=75',
+      'AI maps your body movement — run-up, action, stance — and flags what to fix before it becomes a habit.',
   },
   {
-    icon: '🌀',
-    title: 'Swing & Seam Analysis',
+    id: 'swing-seam',
+    title: 'Swing & Seam',
     description:
-      'Detect lateral movement, seam position, and swing trajectory frame-by-frame. Understand exactly what makes each delivery dangerous.',
-    image: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=75',
+      'Track lateral movement and seam position frame-by-frame. Know exactly what makes each ball move.',
   },
   {
-    icon: '📐',
-    title: 'Line & Length Intelligence',
+    id: 'line-length',
+    title: 'Line & Length',
     description:
-      "Heatmap scoring of every ball bowled tells you exactly where you're leaking runs — and what length your wickets come from.",
-    image: 'https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?w=600&q=75',
+      'Heatmap of every ball shows where you leak runs and what length gets you wickets.',
   },
   {
-    icon: '📦',
-    title: '3D Ball Trajectory',
+    id: 'trajectory-3d',
+    title: '3D Trajectory',
     description:
-      "Bird's-eye and front-on 3D reconstructions of every delivery built from your phone video — no specialised cameras required.",
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=75',
+      'See every delivery from any angle — top-down, front-on, side-on — built from a single phone video.',
   },
   {
-    icon: '🩺',
-    title: 'Injury Risk Insights',
+    id: 'injury-risk',
+    title: 'Injury Risk',
     description:
-      'Spot high-load movement patterns and overuse signals before they become injuries. Protect your body with data-driven load management.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=75',
+      'Catch overuse and risky movement patterns early. Protect your body with smart load tracking.',
   },
   {
-    icon: '🤖',
-    title: 'AI Coaching Insights',
+    id: 'ai-coaching',
+    title: 'AI Coach',
     description:
-      'An LLM-powered personal coach delivers session summaries, improvement drills, peer benchmarks, and next-session game plans — automatically.',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=75',
+      'Get session summaries, drills, benchmarks, and a game plan — written by AI, personalised for you.',
   },
 ];
 
-export const AUDIENCE: AudienceCard[] = [
+export const AUDIENCE_SECTION = {
+  badge: 'Built For',
+  title: 'Cricket at every level',
+  description:
+    "Whether you're a weekend cricketer or running a national academy, CricIQ gives you the same AI tools the pros use.",
+} as const;
+
+export const AUDIENCE = [
   {
-    title: 'Cricket Players',
-    subtitle: 'From grassroots to elite',
+    title: 'Players',
+    subtitle: 'From gully cricket to the national team',
     description:
-      'Get professional-grade feedback on your batting, bowling, and fielding — analysed from your own phone video. Track your progress session by session and compete with peers on technique scores.',
-    image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=900&q=80',
+      'Get the same analysis that pro teams use. Just point your phone, play, and get a full report after every session.',
     cta: 'Start analysing your game',
   },
   {
     title: 'Coaches',
-    subtitle: 'Data at your fingertips',
+    subtitle: 'Data-driven coaching made simple',
     description:
-      'Upload match or training footage and get instant biomechanics breakdowns, pitch maps, and AI-generated coaching notes for every player. Spend less time on admin, more time coaching.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80',
-    cta: 'Upgrade your coaching toolkit',
+      'Upload footage and get instant breakdowns — biomechanics, pitch maps, AI notes — for every player, every session.',
+    cta: 'Upgrade your coaching',
   },
   {
     title: 'Academies',
-    subtitle: 'Scale professional analysis',
+    subtitle: 'Scale analysis across your squad',
     description:
-      'Run analytics across your entire squad from a single dashboard. Track cohort progress, identify talent early, share reports with parents, and benchmark your academy against national standards.',
-    image: 'https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=900&q=80',
+      'One dashboard for your entire academy. Track every player, spot talent early, share reports with parents.',
     cta: 'Bring CricIQ to your academy',
   },
 ];
 
+export const APP_VIDEO = {
+  placeholder: 'App walkthrough coming soon',
+} as const;
+
 export const TESTIMONIAL = {
   quote:
-    'CricIQ is giving every cricketer access to the kind of analysis that was once reserved for international squads. This is the future of how the game is coached.',
+    'CricIQ is giving every cricketer access to the kind of analysis that was once reserved for international squads. This is the future of coaching.',
   name: 'Parthiv Patel',
   role: 'Former Indian International Wicketkeeper-Batsman & Investor, CricIQ',
+} as const;
+
+export const CTA_BANNER = {
+  badge: 'Now in Beta - Free to Join',
+  title: 'Analyse smarter.',
+  titleHighlight: 'Play better.',
+  description:
+    'Join players, coaches, and academies already using CricIQ. Point your phone - get professional-grade analytics instantly. No hardware. No wearables.',
+  ctaButton: 'Download Beta',
+  footnote: 'No credit card required · Available on iOS & Android',
+} as const;
+
+export const FOOTER = {
+  description:
+    'Real-time cricket analytics by SportZengage — for coaches, broadcasters, and boards worldwide.',
+  companyName: 'SportZengage',
+  copyright: 'CricIQ by SportZengage. All rights reserved.',
+} as const;
+
+export const DOWNLOAD_FAB = {
+  label: 'Download Beta',
 } as const;
 
 export const FOOTER_LINKS: FooterLink[] = [
@@ -124,19 +161,10 @@ export const FOOTER_LINKS: FooterLink[] = [
   },
   {
     heading: 'Company',
-    links: [
-      { label: 'About SportZengage', href: '#about' },
-      { label: 'Blog', href: '#blog' },
-      { label: 'Careers', href: '#careers' },
-      { label: 'Press', href: '#press' },
-    ],
+    links: [{ label: 'About', href: 'about' }],
   },
   {
     heading: 'Legal',
-    links: [
-      { label: 'Privacy Policy', href: '#privacy' },
-      { label: 'Terms of Use', href: '#terms' },
-      { label: 'Security', href: '#security' },
-    ],
+    links: [{ label: 'Privacy Policy', href: 'privacy' }],
   },
 ];
