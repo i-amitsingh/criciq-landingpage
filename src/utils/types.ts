@@ -9,6 +9,15 @@ export interface Feature {
   icon: string
   title: string
   description: string
+  image?: string
+}
+
+export interface AudienceCard {
+  title: string
+  subtitle: string
+  description: string
+  image: string
+  cta: string
 }
 
 export interface FooterLinkItem {

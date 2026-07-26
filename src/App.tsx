@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased dark:bg-neutral-950">
       <Navbar theme={theme} onToggle={toggleTheme} />
-      <Home />
+      <Home theme={theme} />
     </div>
   )
 }

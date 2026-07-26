@@ -1,7 +1,14 @@
-import { FOOTER_LINKS } from '../constants/content'
+import { FOOTER_LINKS } from '../constants/content';
+import logoLight from '../assets/CriciqLogo.png';
+import logoDark from '../assets/CriciqLogoDark.png';
+import type { Theme } from '../utils/types';
 
-export default function Footer() {
-  const year = new Date().getFullYear()
+interface Props {
+  theme: Theme;
+}
+
+export default function Footer({ theme }: Props) {
+  const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-neutral-200 bg-white px-4 pt-16 pb-8 dark:border-neutral-800 dark:bg-neutral-950">
@@ -9,12 +16,17 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <a href="#" className="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-white">
-              <span className="text-2xl">🏏</span>
-              Cric<span className="text-primary-500">IQ</span>
+            <a href="#" className="inline-block">
+              <img
+                src={theme === 'dark' ? logoDark : logoLight}
+                alt="CricIQ"
+                className="h-9 w-auto object-contain bg-blend-multiply"
+              />
             </a>
             <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Real-time cricket analytics for coaches, broadcasters, and boards worldwide.
+              Real-time cricket analytics by{' '}
+              <span className="font-medium text-brand-500">SportZengage</span> — for coaches,
+              broadcasters, and boards worldwide.
             </p>
             {/* Social icons */}
             <div className="mt-6 flex gap-3">
@@ -23,7 +35,7 @@ export default function Footer() {
                   key={s}
                   href="#"
                   aria-label={s}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 text-neutral-500 transition-colors hover:border-primary-300 hover:text-primary-600 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-primary-700 dark:hover:text-primary-400"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 text-neutral-500 transition-colors hover:border-brand-400 hover:text-brand-500 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-brand-500 dark:hover:text-brand-400"
                 >
                   {s === 'twitter' && (
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -56,7 +68,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+                      className="text-sm text-neutral-500 transition-colors hover:text-brand-500 dark:text-neutral-400 dark:hover:text-brand-400"
                     >
                       {link.label}
                     </a>
@@ -69,12 +81,15 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-200 pt-8 text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400 sm:flex-row">
-          <span>© {year} CricIQ. All rights reserved.</span>
-          <span>
-            Made with ❤️ for cricket lovers everywhere
-          </span>
+          <span>© {year} CricIQ by SportZengage. All rights reserved.</span>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
+          >
+            Download Beta
+          </a>
         </div>
       </div>
     </footer>
-  )
+  );
 }
