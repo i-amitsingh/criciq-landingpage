@@ -46,17 +46,17 @@ export const FEATURES = [
     id: 'ball-speed',
     title: 'Ball Speed',
     description:
-      'Measure pace, release point, and speed changes across your session — from your phone camera.',
+      'Measure pace, release point, and speed changes across your session - from your phone camera.',
   },
   {
     id: 'biomechanics',
     title: 'Biomechanics',
     description:
-      'AI maps your body movement — run-up, action, stance — and flags what to fix before it becomes a habit.',
+      'AI maps your body movement - run-up, action, stance - and flags what to fix before it becomes a habit.',
   },
   {
     id: 'swing-seam',
-    title: 'Swing & Seam',
+    title: 'Swing Analysis',
     description:
       'Track lateral movement and seam position frame-by-frame. Know exactly what makes each ball move.',
   },
@@ -70,7 +70,7 @@ export const FEATURES = [
     id: 'trajectory-3d',
     title: '3D Trajectory',
     description:
-      'See every delivery from any angle — top-down, front-on, side-on — built from a single phone video.',
+      'See every delivery from any angle - top-down, front-on, side-on - built from a single phone video.',
   },
   {
     id: 'injury-risk',
@@ -82,7 +82,7 @@ export const FEATURES = [
     id: 'ai-coaching',
     title: 'AI Coach',
     description:
-      'Get session summaries, drills, benchmarks, and a game plan — written by AI, personalised for you.',
+      'Get session summaries, drills, benchmarks, and a game plan - written by AI, personalised for you.',
   },
 ];
 
@@ -105,7 +105,7 @@ export const AUDIENCE = [
     title: 'Coaches',
     subtitle: 'Data-driven coaching made simple',
     description:
-      'Upload footage and get instant breakdowns — biomechanics, pitch maps, AI notes — for every player, every session.',
+      'Upload footage and get instant breakdowns - biomechanics, pitch maps, AI notes - for every player, every session.',
     cta: 'Upgrade your coaching',
   },
   {
@@ -140,7 +140,7 @@ export const CTA_BANNER = {
 
 export const FOOTER = {
   description:
-    'Real-time cricket analytics by SportZengage — for coaches, broadcasters, and boards worldwide.',
+    'Real-time cricket analytics by SportZengage - for coaches, broadcasters, and boards worldwide.',
   companyName: 'SportZengage',
   copyright: 'CricIQ by SportZengage. All rights reserved.',
 } as const;

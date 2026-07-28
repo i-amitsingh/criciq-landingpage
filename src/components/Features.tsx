@@ -1,25 +1,23 @@
 import { FEATURES, FEATURES_SECTION } from '../constants/content';
-import {
-  PitchMapAnim,
-  BallSpeedAnim,
-  BiomechanicsAnim,
-  SwingSeamAnim,
-  LineLengthAnim,
-  Trajectory3DAnim,
-  InjuryRiskAnim,
-  AICoachAnim,
-} from './FeatureAnimations';
-import type { ReactNode } from 'react';
 
-const ANIM_MAP: Record<string, () => ReactNode> = {
-  'pitch-map': PitchMapAnim,
-  'ball-speed': BallSpeedAnim,
-  biomechanics: BiomechanicsAnim,
-  'swing-seam': SwingSeamAnim,
-  'line-length': LineLengthAnim,
-  'trajectory-3d': Trajectory3DAnim,
-  'injury-risk': InjuryRiskAnim,
-  'ai-coaching': AICoachAnim,
+import pitchMap from '../assets/features/pitch-map.jpeg';
+import ballSpeed from '../assets/features/bowling-speed.png';
+import biomechanics from '../assets/features/biomechanics.png';
+import swingSeam from '../assets/features/Swing-to-a-Cricket-Ball.jpg';
+import lineLength from '../assets/features/line-length.webp';
+import trajectory3d from '../assets/features/trajectory-3d.jpeg';
+import injuryRisk from '../assets/features/injury-risk.png';
+import aiCoach from '../assets/features/ai-coach.png';
+
+const IMAGE_MAP: Record<string, string> = {
+  'pitch-map': pitchMap,
+  'ball-speed': ballSpeed,
+  biomechanics: biomechanics,
+  'swing-seam': swingSeam,
+  'line-length': lineLength,
+  'trajectory-3d': trajectory3d,
+  'injury-risk': injuryRisk,
+  'ai-coaching': aiCoach,
 };
 
 export default function Features() {
@@ -40,15 +38,25 @@ export default function Features() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((feature) => {
-            const Anim = ANIM_MAP[feature.id];
+            const img = IMAGE_MAP[feature.id];
             return (
               <div
                 key={feature.id}
                 className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-brand-600"
               >
-                <div className="flex h-36 items-center justify-center bg-gradient-to-br from-brand-50/50 to-transparent p-4 text-neutral-400 dark:from-brand-500/5 dark:text-neutral-500">
-                  {Anim ? <div className="h-24 w-24"><Anim /></div> : null}
+                {/* Media slot — swap img for video when ready */}
+                <div className="relative h-36 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                  {img && (
+                    <img
+                      src={img}
+                      alt={feature.title}
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
+                  {/* Dark overlay so text on bottom remains readable if added later */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
+
                 <div className="p-5">
                   <h3 className="mb-1.5 text-base font-bold text-neutral-900 dark:text-white">
                     {feature.title}
