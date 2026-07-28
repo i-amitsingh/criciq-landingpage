@@ -2,17 +2,6 @@ import type { CSSProperties } from 'react';
 
 const VIDEO_URL = 'https://cdn.criciq.ai/pub/m/how_to.mp4';
 
-const FEATURES_CHIPS = [
-  'Pitch Map',
-  'Ball Speed',
-  'Biomechanics',
-  'Swing & Seam',
-  'Line & Length',
-  '3D Trajectory',
-  'Injury Risk',
-  'AI Coach',
-];
-
 function PhoneMockup() {
   const phoneW = 'min(260px, calc(100vw - 64px))';
   const btnStyle = (side: 'left' | 'right', top: number, h: number): CSSProperties => ({
@@ -32,7 +21,8 @@ function PhoneMockup() {
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(41,171,226,0.16) 0%, transparent 70%)',
+          background:
+            'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(41,171,226,0.16) 0%, transparent 70%)',
           transform: 'scale(1.6)',
         }}
       />
@@ -44,8 +34,10 @@ function PhoneMockup() {
           width: '100%',
           borderRadius: '38px',
           padding: '3px',
-          background: 'linear-gradient(145deg, #3a3a3a 0%, #1e1e1e 30%, #2d2d2d 55%, #141414 80%, #252525 100%)',
-          boxShadow: '0 0 0 0.5px rgba(255,255,255,0.07) inset, 0 1px 3px rgba(255,255,255,0.05) inset, 0 40px 80px rgba(0,0,0,0.9), 0 8px 24px rgba(0,0,0,0.6)',
+          background:
+            'linear-gradient(145deg, #3a3a3a 0%, #1e1e1e 30%, #2d2d2d 55%, #141414 80%, #252525 100%)',
+          boxShadow:
+            '0 0 0 0.5px rgba(255,255,255,0.07) inset, 0 1px 3px rgba(255,255,255,0.05) inset, 0 40px 80px rgba(0,0,0,0.9), 0 8px 24px rgba(0,0,0,0.6)',
         }}
       >
         {/* LEFT — volume up */}
@@ -56,11 +48,16 @@ function PhoneMockup() {
         <div style={btnStyle('right', 130, 56)} />
 
         {/* ── Phone body ── */}
-        <div style={{ borderRadius: '36px', overflow: 'hidden', background: '#0c0c0c', position: 'relative' }}>
-
+        <div
+          style={{
+            borderRadius: '36px',
+            overflow: 'hidden',
+            background: '#0c0c0c',
+            position: 'relative',
+          }}
+        >
           {/* Screen */}
           <div style={{ position: 'relative', background: '#000' }}>
-
             {/* Status bar — Android: time left, icons right */}
             <div
               style={{
@@ -73,7 +70,11 @@ function PhoneMockup() {
                 zIndex: 10,
               }}
             >
-              <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff', letterSpacing: '0.1px' }}>9:41</span>
+              <span
+                style={{ fontSize: '12px', fontWeight: 600, color: '#fff', letterSpacing: '0.1px' }}
+              >
+                9:41
+              </span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                 {/* Signal bars */}
                 <svg width="15" height="11" viewBox="0 0 17 12" fill="white">
@@ -85,15 +86,52 @@ function PhoneMockup() {
                 {/* WiFi */}
                 <svg width="14" height="11" viewBox="0 0 16 12" fill="white">
                   <circle cx="8" cy="10.5" r="1" />
-                  <path d="M4.5 7.5a5 5 0 0 1 7 0" stroke="white" strokeWidth="1.3" fill="none" strokeLinecap="round" />
-                  <path d="M1.5 4.5a9 9 0 0 1 13 0" stroke="white" strokeWidth="1.3" fill="none" strokeLinecap="round" opacity="0.55" />
+                  <path
+                    d="M4.5 7.5a5 5 0 0 1 7 0"
+                    stroke="white"
+                    strokeWidth="1.3"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M1.5 4.5a9 9 0 0 1 13 0"
+                    stroke="white"
+                    strokeWidth="1.3"
+                    fill="none"
+                    strokeLinecap="round"
+                    opacity="0.55"
+                  />
                 </svg>
                 {/* Battery — Android style (horizontal, nub on right) */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
-                  <div style={{ width: '20px', height: '10px', border: '1px solid rgba(255,255,255,0.45)', borderRadius: '2.5px', display: 'flex', alignItems: 'center', padding: '1.5px 1.5px' }}>
-                    <div style={{ width: '80%', height: '100%', background: '#4ade80', borderRadius: '1.5px' }} />
+                  <div
+                    style={{
+                      width: '20px',
+                      height: '10px',
+                      border: '1px solid rgba(255,255,255,0.45)',
+                      borderRadius: '2.5px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '1.5px 1.5px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '80%',
+                        height: '100%',
+                        background: '#4ade80',
+                        borderRadius: '1.5px',
+                      }}
+                    />
                   </div>
-                  <div style={{ width: '2px', height: '4px', background: 'rgba(255,255,255,0.35)', borderRadius: '0 1px 1px 0' }} />
+                  <div
+                    style={{
+                      width: '2px',
+                      height: '4px',
+                      background: 'rgba(255,255,255,0.35)',
+                      borderRadius: '0 1px 1px 0',
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -116,17 +154,28 @@ function PhoneMockup() {
             />
 
             {/* Video — 9:16, margin pulls it behind status bar cleanly */}
-            <div style={{ aspectRatio: '9/16', overflow: 'hidden', background: '#000', marginTop: '-36px' }}>
+            <div
+              style={{
+                aspectRatio: '9/16',
+                overflow: 'hidden',
+                background: '#000',
+                marginTop: '-36px',
+              }}
+            >
               <div style={{ height: '36px' }} />
               <video
                 src={VIDEO_URL}
-                style={{ width: '100%', height: 'calc(100% - 36px)', objectFit: 'cover', display: 'block' }}
+                style={{
+                  width: '100%',
+                  height: 'calc(100% - 36px)',
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
                 playsInline
                 controls
                 preload="metadata"
               />
             </div>
-
           </div>
         </div>
       </div>
@@ -134,46 +183,86 @@ function PhoneMockup() {
       {/* Floating stat cards */}
       <div
         className="absolute hidden sm:flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900/95 px-3 py-2.5 shadow-2xl"
-        style={{ top: '15%', right: 'calc(100% + 16px)', minWidth: '120px', backdropFilter: 'blur(12px)' }}
+        style={{
+          top: '15%',
+          right: 'calc(100% + 16px)',
+          minWidth: '120px',
+          backdropFilter: 'blur(12px)',
+        }}
       >
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500/20 flex-shrink-0">
-          <svg className="h-4 w-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            className="h-4 w-4 text-sky-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
           </svg>
         </div>
         <div>
           <p className="text-[10px] text-neutral-500 leading-none mb-0.5">Ball Speed</p>
-          <p className="text-sm font-bold text-white leading-none">138 <span className="text-xs font-normal text-neutral-400">km/h</span></p>
+          <p className="text-sm font-bold text-white leading-none">
+            138 <span className="text-xs font-normal text-neutral-400">km/h</span>
+          </p>
         </div>
       </div>
 
       <div
         className="absolute hidden sm:flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900/95 px-3 py-2.5 shadow-2xl"
-        style={{ top: '42%', left: 'calc(100% + 16px)', minWidth: '120px', backdropFilter: 'blur(12px)' }}
+        style={{
+          top: '42%',
+          left: 'calc(100% + 16px)',
+          minWidth: '120px',
+          backdropFilter: 'blur(12px)',
+        }}
       >
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 flex-shrink-0">
-          <svg className="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            className="h-4 w-4 text-emerald-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
           </svg>
         </div>
         <div>
           <p className="text-[10px] text-neutral-500 leading-none mb-0.5">Accuracy</p>
-          <p className="text-sm font-bold text-white leading-none">94 <span className="text-xs font-normal text-neutral-400">%</span></p>
+          <p className="text-sm font-bold text-white leading-none">
+            94 <span className="text-xs font-normal text-neutral-400">%</span>
+          </p>
         </div>
       </div>
 
       <div
         className="absolute hidden sm:flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-900/95 px-3 py-2.5 shadow-2xl"
-        style={{ bottom: '20%', right: 'calc(100% + 16px)', minWidth: '120px', backdropFilter: 'blur(12px)' }}
+        style={{
+          bottom: '20%',
+          right: 'calc(100% + 16px)',
+          minWidth: '120px',
+          backdropFilter: 'blur(12px)',
+        }}
       >
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/20 flex-shrink-0">
-          <svg className="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+          <svg
+            className="h-4 w-4 text-amber-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
           </svg>
         </div>
         <div>
           <p className="text-[10px] text-neutral-500 leading-none mb-0.5">Analysis</p>
-          <p className="text-sm font-bold text-white leading-none">3 <span className="text-xs font-normal text-neutral-400">sec</span></p>
+          <p className="text-sm font-bold text-white leading-none">
+            3 <span className="text-xs font-normal text-neutral-400">sec</span>
+          </p>
         </div>
       </div>
     </div>
@@ -194,57 +283,18 @@ export default function AppVideo() {
             See It In Action
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Point. Analyse.{' '}
-            <span className="text-brand-400">Improve.</span>
+            Point. Analyse. <span className="text-brand-400">Improve.</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-neutral-400 sm:text-base">
-            Watch CricIQ analyse a real session — pitch maps, ball speed, biomechanics and AI coaching, all from one phone video.
+            Watch CricIQ analyse a real session — pitch maps, ball speed, biomechanics and AI
+            coaching, all from one phone video.
           </p>
         </div>
 
         {/* Main layout */}
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-20">
-          {/* Left feature chips */}
-          <div className="hidden w-44 flex-col gap-3 lg:flex">
-            {FEATURES_CHIPS.slice(0, 4).map((chip) => (
-              <div
-                key={chip}
-                className="flex items-center gap-2.5 rounded-xl border border-neutral-800 bg-neutral-900/80 px-4 py-3"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-neutral-200">{chip}</span>
-              </div>
-            ))}
-          </div>
-
           {/* Phone */}
           <PhoneMockup />
-
-          {/* Right feature chips */}
-          <div className="hidden w-44 flex-col gap-3 lg:flex">
-            {FEATURES_CHIPS.slice(4).map((chip) => (
-              <div
-                key={chip}
-                className="flex items-center gap-2.5 rounded-xl border border-neutral-800 bg-neutral-900/80 px-4 py-3"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-neutral-200">{chip}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile chip row */}
-        <div className="mt-10 flex gap-3 overflow-x-auto pb-2 lg:hidden" style={{ scrollbarWidth: 'none' }}>
-          {FEATURES_CHIPS.map((chip) => (
-            <div
-              key={chip}
-              className="flex flex-shrink-0 items-center gap-2 rounded-full border border-neutral-700 bg-neutral-900 px-4 py-2"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-              <span className="text-xs font-medium text-neutral-300 whitespace-nowrap">{chip}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
